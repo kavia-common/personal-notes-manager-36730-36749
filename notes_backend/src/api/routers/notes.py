@@ -158,4 +158,5 @@ def delete_note(
     note = _get_note_or_404(db, note_id)
     db.delete(note)
     db.commit()
-    return None
+    # Do not return any body for 204 No Content
+    return
